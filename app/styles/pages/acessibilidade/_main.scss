@@ -1,0 +1,18 @@
+.acessibilidade-main {
+  &__content {
+    max-width: rem(630);
+    width: 100%;
+    padding-top: rem(25);
+    padding-bottom: rem(45);
+    color: var(--darker-gray);
+    font-size: em(14);
+    line-height: 1.6666;
+    margin: 0 auto;
+
+    @include mq(md) {
+      padding-top: rem(80);
+      font-size: em(15);
+    }
+  }
+
+}

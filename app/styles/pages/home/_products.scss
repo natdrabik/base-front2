@@ -1,0 +1,22 @@
+.home-products {
+  &__header {
+    padding-top: rem(30);
+    padding-bottom: rem(20);
+
+    @include mq(md) {
+      padding-top: rem(64);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--darker-gray);
+    font-size: fluidTypography(22, 31);
+    line-height: 1.2;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: em(31);
+    }
+  }
+}

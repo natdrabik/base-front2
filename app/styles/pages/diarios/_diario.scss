@@ -1,0 +1,98 @@
+.diarios-diario {
+  background: #f5f5f5;
+  overflow: hidden;
+
+  &__header {
+    padding-top: rem(60);
+    padding-bottom: rem(40);
+  }
+
+  &__title {
+    display: block;
+    margin: 0 0 em(28, 31);
+    color: var(--purple);
+    font-size: fluidTypography(22, 31);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__text {
+    display: block;
+    max-width: rem(700);
+    margin: 0 auto;
+    color: var(--darker-gray);
+    font-size: em(17);
+    line-height: 1.529411;
+    text-align: center;
+  }
+
+  &__select {
+    max-width: rem(360);
+    margin-bottom: rem(16);
+  }
+
+  &__container {
+    margin-bottom: rem(40);
+    padding: rem(20) rem(14);
+    border: 1px solid var(--lighter-gray);
+    border-radius: rem(10);
+
+    @include mq(md) {
+      display: flex;
+      margin-bottom: rem(80);
+      padding: rem(40) rem(30) rem(20);
+    }
+  }
+
+  &__figure {
+    margin: 0;
+
+    @include mq(md) {
+      margin: rem(53) 0 0;
+      padding-right: rem(35);
+      padding-left: rem(35);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    margin-top: rem(30);
+
+    @include mq(md) {
+      margin-top: 0;
+      padding-right: rem(35);
+      padding-left: rem(35);
+    }
+  }
+
+  &__diario {
+    display: block;
+    margin-top: 0;
+    margin-bottom: rem(25);
+    color: var(--purple);
+    font-size: em(20);
+    font-weight: 700;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    font-size: em(14);
+    line-height: 1.9285;
+    list-style: none;
+  }
+
+  &__item {
+    + #{&} {
+      margin-top: rem(25);
+
+      @include mq(md) {
+        margin-top: 0;
+      }
+    }
+  }
+}

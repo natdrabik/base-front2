@@ -1,0 +1,122 @@
+.leadform {
+  padding: 0 rem(15);
+
+  &__header {
+    max-width: rem(768);
+    margin: 0 auto;
+    padding-top: rem(60);
+    padding-bottom: rem(40);
+  }
+
+  &__title {
+    display: block;
+    margin: 0 0 em(28, 31);
+    color: var(--darker-gray);
+    font-size: fluidTypography(18, 25);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text {
+    display: block;
+    max-width: rem(500);
+    margin: 0 auto;
+    color: var(--darker-gray);
+    font-size: em(17);
+    line-height: 1.529411;
+    text-align: center;
+  }
+
+  &__form {
+    max-width: rem(630);
+    margin: 0 auto rem(60);
+    padding: rem(30) rem(10) 0;
+    border-radius: rem(10);
+    background: var(--lighter-gray);
+
+    @include mq(md) {
+      margin-bottom: 0;
+      padding: 0 0 rem(40);
+      background: transparent;
+    }
+  }
+
+  &__container {
+    @include mq(md) {
+      padding: rem(40) rem(30) rem(64);
+      background: var(--lighter-gray);
+      border-radius: rem(10);
+    }
+  }
+
+  &__group {
+    + #{&} {
+      margin-top: rem(16);
+
+      @include mq(md) {
+        margin-top: rem(20);
+      }
+    }
+  }
+
+  &__label {
+    font-size: em(15);
+    font-weight: 700;
+    letter-spacing: .06em;
+    line-height: 2.5;
+
+    @include mq(md) {
+      font-size: em(16);
+      letter-spacing: 0;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    @include appearance(none);
+    display: block;
+    width: 100%;
+    padding: rem(10);
+    border: 1px solid var(--light-gray);
+    border-radius: rem(4);
+    font-size: em(16);
+    line-height: 1.2;
+
+    @include mq(md) {
+      padding: rem(15);
+    }
+  }
+
+  &__textarea {
+    min-height: rem(93);
+    resize: none;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: rem(24);
+
+    @include mq(md) {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: rem(10);
+    }
+  }
+
+  &__submit {
+    position: relative;
+    border: 0;
+    cursor: pointer;
+    transform: translateY(50%);
+
+    @include mq(md) {
+      top: rem(-10);
+      right: rem(30);
+      transform: translateY(-50%);
+    }
+  }
+}

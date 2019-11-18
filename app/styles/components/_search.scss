@@ -1,0 +1,121 @@
+.search {
+  &__toggle {
+    display: none;
+    position: relative;
+    transition: color .5s;
+    z-index: 2;
+
+    &:focus {
+      outline-offset: 5px;
+    }
+
+    .has--search & {
+      color: var(--light-gray);
+
+      &:focus {
+        outline-color: var(--light-gray);
+      }
+    }
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    @include mq(md) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      max-width: 100%;
+      padding-top: rem(120);
+      padding-bottom: rem(24);
+      transform: translateX(-50%);
+      transition: clip-path .5s;
+      background-color: var(--darker-gray);
+      color: var(--light-gray);
+      pointer-events: none;
+      // visibility: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+      .has--search & {
+        pointer-events: auto;
+        clip-path: polygon(0 0, 100% 0, 100% 150%, 0 100%);
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    width: 100%;
+    max-width: rem(560);
+  }
+
+  &__input {
+    @include appearance(none);
+    width: 100%;
+    height: rem(37);
+    padding: 0 rem(15);
+    border: 1px solid currentColor;
+    border-radius: rem(10);
+    background: inherit;
+    color: inherit;
+    font-size: em(13);
+
+    &:focus {
+      outline-color: var(--light-gray);
+      outline-offset: 5px;
+    }
+
+    @include mq(md) {
+      height: rem(80);
+      padding: 0 rem(42);
+      border-radius: rem(40);
+      font-size: em(20);
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+  }
+
+  &__submit {
+    margin-right: rem(15);
+    color: inherit;
+
+    &:focus {
+      outline-color: var(--light-gray);
+      outline-offset: 5px;
+    }
+
+    @include mq(md) {
+      position: absolute;
+      top: 50%;
+      right: rem(35);
+      margin-top: rem(-14);
+    }
+
+    svg {
+      width: rem(28);
+      height: rem(28);
+    }
+  }
+
+  &__icon {
+    &-close {
+      display: none;
+
+      .has--search & {
+        display: inline;
+
+        + .search__icon {
+          display: none;
+        }
+      }
+    }
+  }
+}

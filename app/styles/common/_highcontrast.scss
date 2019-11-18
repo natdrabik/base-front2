@@ -1,0 +1,16 @@
+.has--high-contrast {
+  --orange: #000;
+  --purple: #000;
+  --lighter-gray: #fff;
+  --light-gray: #fff;
+  --dark-gray: #000;
+  --darker-gray: #000;
+
+  img {
+    filter: grayscale(100%) contrast(150%);
+  }
+
+  video {
+    filter: grayscale(100%) contrast(120%);
+  }
+}

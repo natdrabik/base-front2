@@ -1,0 +1,108 @@
+.sobre-main {
+  &__content {
+    display: grid;
+    align-items: center;
+    padding-top: rem(25);
+    padding-bottom: rem(45);
+    color: var(--darker-gray);
+    font-size: em(14);
+    line-height: 1.6666;
+    grid-gap: rem(30) rem(80);
+
+    @include mq(md) {
+      padding-top: rem(80);
+      font-size: em(15);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    color: var(--purple);
+    font-size: fluidTypography(22, 31);
+    line-height: 1.2;
+
+    @include mq(lg) {
+      font-size: em(31, 15);
+    }
+
+    &--large {
+      @include mq(md) {
+        margin-top: rem(30);
+        margin-bottom: rem(30);
+        text-align: center;
+        grid-column-end: span 2;
+      }
+    }
+  }
+
+  &__figure {
+    margin: 0;
+
+    &--large {
+      @include mq(md) {
+        grid-column-end: span 2;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 44px), calc(100% - 44px) 100%, 0 100%);
+    }
+
+    .sobre-main__selo {
+      position: absolute;
+      right: rem(20);
+      width: rem(50);
+      margin: rem(-40) 0 0 0;
+      clip-path: none;
+      @include mq(md) {
+        position: relative;
+        width: rem(90);
+        margin: rem(-80) 0 0 rem(-40);
+
+      }
+      
+      
+      
+    }
+  }
+
+  &__aside {
+    margin-top: rem(15);
+
+    @include mq(md) {
+      margin: 0 rem(20);
+    }
+
+    &:before {
+      display: block;
+      width: rem(100);
+      border-top: 5px solid var(--purple);
+      content: "";
+    }
+  }
+
+  &__quote {
+    display: block;
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+    font-size: em(17, 14);
+    line-height: 1.6666;
+
+    @include mq(md) {
+      padding-top: rem(30);
+      padding-bottom: rem(30);
+      font-size: em(20, 15);
+    }
+
+    &:before,
+    &:after {
+      content: "";
+    }
+  }
+
+  
+}

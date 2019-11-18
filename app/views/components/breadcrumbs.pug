@@ -1,0 +1,14 @@
+nav.breadcrumb(aria-label="Breadcrumb")
+  .breadcrumb__wrapper
+    .wrapper__small
+      ol.breadcrumb__list
+        if breadcrumbs
+          each crumb, index in breadcrumbs
+            if index == breadcrumbs.length - 1
+              li.breadcrumb__item.is--current: a.breadcrumb__link(href=crumb.url, aria-current="page") #{crumb.name}
+            else
+              li.breadcrumb__item: a.breadcrumb__link(href=crumb.url) #{crumb.name}
+        else
+          li.breadcrumb__item: a.breadcrumb__link(href="#") Home
+          li.breadcrumb__item: a.breadcrumb__link(href="#") Produtos
+          li.breadcrumb__item: a.breadcrumb__link(href="#", aria-current="page") Recortes Jurídicos

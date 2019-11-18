@@ -1,0 +1,8 @@
+extends layouts/default
+
+block content
+  - var breadcrumbs = [{name: 'Home',url: '/'},{name: 'Blog',url: '/blog'},{name: 'A importância e os impactos da relação entre Direito e tecnologia',url: '/blogpost'}];
+
+  include components/breadcrumbs
+  include pages/post/article
+  include pages/post/related

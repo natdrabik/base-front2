@@ -1,0 +1,69 @@
+.masthead__fixed#fixed
+  .aux
+    .wrapper__small
+      .aux__container
+        ul.aux__toggles
+          li.aux__item
+            button.reset__btn.aux__toggle(type="button", data-contrast, title="Alto contraste")
+              span.sr-only Alto contraste
+              include ../../images/highcontrast.svg
+          li.aux__item
+            button.reset__btn.aux__toggle(type="button", data-fontsize-increase, title="Aumentar fonte")
+              span.sr-only Aumentar fonte
+              include ../../images/fontsize-increase.svg
+          li.aux__item
+            button.reset__btn.aux__toggle(type="button", data-fontsize-decrease, title="Diminuir fonte")
+              span.sr-only Diminuir fonte
+              include ../../images/fontsize-decrease.svg
+  .masthead#masthead
+    .masthead__wrapper
+      .wrapper__small
+        .masthead__container
+          .masthead__brand#brand
+            a.masthead__logo(href="/")
+              include ../../images/logo.svg
+          button.reset__btn.masthead__toggle(type="button", data-toggle="nav")
+            span.sr-only Menu
+            i.masthead__icon-close
+              include ../../images/cross-remove-sign.svg
+            i.masthead__icon
+              include ../../images/menu-options.svg
+          .masthead__panel
+            nav.masthead__nav
+              ul.nav
+                li.nav__item: a.nav__link.is--current(href="/") Home
+                li.nav__item: a.nav__link(href="/produtos") Produtos
+                li.nav__item.is--mobile: a.nav__link(href="/diarios") Diários
+                li.nav__item: a.nav__link(href="/sobre") Sobre Nós
+                li.nav__item: a.nav__link(href="/blog") Blog
+                li.nav__item: a.nav__link(href="/contato") Contato
+                li.nav__item.is--mobile: a.nav__link(href="/termos") Termos de uso
+                li.nav__item.is--mobile: a.nav__link(href="/faq") FAQ
+            .masthead__search(data-search)
+              .search
+                button.reset__btn.search__toggle(type="button", title="Busca", data-toggle="search")
+                  span.sr-only Busca
+                  i.search__icon-close
+                    include ../../images/close.svg
+                  i.search__icon
+                    include ../../images/search.svg
+                .search__container
+                  form.search__form
+                    label.search__label.sr-only(for="search") Buscar
+                    input.search__input#search(type="search", placeholder="Digite o que você quer buscar")
+                    button.reset__btn.search__submit(type="submit")
+                      span.sr-only Buscar
+                      i.search__icon
+                        include ../../images/search.svg
+            .masthead__clientarea
+              a.masthead__button(href="/login")
+                i.masthead__button-icon: include ../../images/locked-padlock.svg
+                |  Área do Cliente
+              //- button.masthead__button(type="button", data-toggle="dropdown")
+              //-   i.masthead__button-icon: include ../../images/locked-padlock.svg
+              //-   |  Área do Cliente
+              //- .masthead__menu
+              //-   ul.masthead__list
+              //-     li.masthead__list-item: a.masthead__list-btn(href="#", target="_blank") Minhas publicações
+              //-     li.masthead__list-item: a.masthead__list-btn(href="#", target="_blank") Gerenciar assinaturas
+

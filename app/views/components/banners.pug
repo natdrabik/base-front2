@@ -1,0 +1,35 @@
+.banner
+  .wrapper
+    if banner
+      .banner__container
+        if banner.image
+          figure.banner__figure
+            picture.banner__picture
+              source(srcset=banner.image.desktop, media="(min-width: 600px)")
+              img(src=banner.image.mobile, alt="Texto alternativo da imagem.")
+        else if banner.video
+          video.banner__video(controls, autoplay, preload)
+            source(src=banner.video.mp4, type="video/mp4")
+        if banner.title
+          .banner__content
+            h1.banner__title= banner.title
+            .banner__text.has--text
+              if banner.text
+                each paragraph in banner.text
+                  p= paragraph
+            if banner.button
+              a.btn.btn--purple(href=banner.url)= banner.button
+        if banner.button
+          a.banner__link(href=banner.url, aria-hidden, aria-label=banner.button)
+    else
+      .banner__container
+        figure.banner__figure
+          picture.banner__picture
+            source(srcset="/images/banner-recortes.jpg", media="(min-width: 600px)")
+            img(src="/images/banner-recortes-mobile.jpg", alt="Texto alternativo da imagem.")
+        .banner__content
+          h1.banner__title Inovação e eficiência para seus recortes jurídicos.
+          .banner__text.has--text
+            p Para você que valoriza o tempo, oferecemos uma maneira diferente para realizar os recortes jurídicos. Um sistema moderno e inovador que irá proporcionar informações precisas, seguras e em menor tempo, dos processos do seu escritório.
+          a.btn.btn--purple(href="#") Experimente Agora
+        a.banner__link(href="#", aria-hidden, aria-label="Experimente Agora")

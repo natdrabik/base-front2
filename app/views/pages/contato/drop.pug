@@ -1,0 +1,28 @@
+.contato-drop
+  .wrapper__tiny
+    header.contato-drop__header
+      h1.contato-drop__title Envie seu currículo
+      .contato-drop__text.has--text
+        p Faça parte da equipe Bonnjur! Envie seu currículo e aguarde o nosso contato para preenchimento de futuras vagas.
+    form.contato-drop__form(method="POST", enctype="multipart/form-data")
+      .contato-form__group
+        label.contato-form__label(for="contato_drop_name") Nome#[sup(aria-describedby="required_label") *]:
+        input#contato_drop_name.contato-form__input(type="text", name="name", aria-required="true", required)
+      .contato-form__group
+        label.contato-form__label(for="contato_drop_interests") Área de Interesse#[sup(aria-describedby="required_label") *]:
+        input#contato_drop_interests.contato-form__input(type="text", name="interests", aria-required="true", required)
+        //- input#contato_drop_lastname.contato-form__input(type="text", name="lastname", aria-required="true")
+      .contato-drop__dropzone
+        .dropzone#contato_drop_zone(data-dropzone)
+          input#contato_drop_file.dropzone__fileinput.sr-only(name="file", type="file", data-dropzone-input)
+          label.dropzone__label(for="contato_drop_file")
+            span.dropzone__text Escolha um arquivo
+            span.dropzone__text.dropzone__text--dragover Solte o arquivo para enviá-lo.
+            span.dropzone__filename
+              i.dropzone__file-icon
+                include ../../../images/file.svg
+              span(data-dropzone-filename)
+        footer.contato-drop__footer
+          .contato-form__captcha
+            #grecaptcha_2.g-recaptcha(data-sitekey="6LetrKoUAAAAAOETBb6jDi762rkkM3UsPOCnOH_W")
+          button.btn.btn--gray.contato-drop__submit(type="submit") Enviar

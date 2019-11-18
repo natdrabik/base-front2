@@ -1,0 +1,10 @@
+extends layouts/default
+
+block content
+  - var breadcrumbs = [{name: 'Home',url: '/'},{name: 'Produtos',url: '/produtos'}];
+  - var banner = {image:{desktop: '/images/banner-produtos.jpg', mobile: '/images/banner-produtos-mobile.jpg'}, title: 'A informação que você precisa, no momento certo.', text: ['Os produtos Bonnjur são dedicados e personalizados às necessidades de cada cliente, assim oferecemos modernidade para otimizar o seu tempo com eficiência em recortes, buscas e informações em todas as etapas dos processos do seu escritório.']}
+
+  include components/breadcrumbs
+  include components/banners
+  include pages/produtos/products
+  //- include pages/home/clients

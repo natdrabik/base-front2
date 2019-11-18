@@ -1,0 +1,109 @@
+.product {
+  transition: opacity .4s, transform .4s;
+  scroll-snap-align: start;
+  will-change: transform, opacity;
+
+  &.is--below-scroll {
+    // top: 50px;
+    transform: translate(0, 50px);
+    opacity: 0;
+  }
+
+  &__card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: rem(25);
+    padding: 0 rem(16);
+    border: 1px solid var(--lighter-gray);
+    border-radius: rem(10);
+    background: #fff;
+    color: var(--dark-gray);
+
+    @include mq(md) {
+      border-radius: rem(20);
+    }
+
+    .has--high-contrast & {
+      border-color: #000;
+    }
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+    max-width: calc(100% - #{rem(60)});
+    margin-right: auto;
+    margin-bottom: rem(25);
+    font-size: fluidTypography(17, 20);
+    font-weight: 400;
+    line-height: 1.2;
+
+    @include mq(md) {
+      max-width: calc(100% - #{rem(140)});
+      margin-left: auto;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @include mq(lg) {
+      font-size: em(20);
+    }
+  }
+
+  &__label {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: rem(16);
+    align-items: center;
+    justify-content: center;
+    width: rem(60);
+    height: rem(64);
+    background: var(--dark-gray);
+    color: #fff;
+    font-size: em(16, 20);
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% calc(100% - 1em), 0 100%);
+
+    @include mq(md) {
+      right: rem(26);
+    }
+  }
+
+  &__description {
+    max-width: rem(305);
+    margin: rem(25) auto 0;
+    font-size: em(15);
+    font-weight: 300;
+    line-height: 1.4666;
+    text-align: center;
+  }
+
+  &__button {
+    position: relative;
+    min-width: rem(170);
+    padding: rem(16);
+    transform: translateY(50%);
+    transition: color .4s, background-color .4s;
+    border: 1px solid currentColor;
+    border-radius: em(25, 16);
+    background-color: var(--lighter-gray);
+    color: var(--purple);
+    font-size: em(16);
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    z-index: 2;
+
+    &:hover {
+      background-color: var(--purple);
+      color: #fff;
+    }
+  }
+}

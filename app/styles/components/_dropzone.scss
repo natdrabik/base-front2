@@ -1,0 +1,78 @@
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // max-width: rem(630);
+  min-height: rem(87);
+  margin: 0 auto;
+  padding: rem(10);
+  border: 1px solid var(--light-gray);
+  border-radius: rem(10);
+  background: #fff;
+  font-size: em(17);
+  line-height: 1.176;
+  text-align: center;
+
+  &:focus-within {
+    outline: var(--purple) dotted 1px;
+  }
+
+  @include mq(md) {
+    min-height: rem(127);
+  }
+
+  &.is--dragover {
+    background-clip: content-box;
+    background-image: linear-gradient(var(--light-gray) 0%, var(--light-gray) 100%);
+  }
+
+  &__label {
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--purple);
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    &--dragover {
+      display: none;
+
+      .is--dragover & {
+        display: block;
+      }
+    }
+
+    .is--dragover &:not(#{&}--dragover),
+    .has--file & {
+      display: none;
+    }
+  }
+
+  &__filename {
+    display: none;
+
+    .has--file & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [data-dropzone-filename] {
+      max-width: rem(200);
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &__file-icon {
+    svg {
+      width: rem(64);
+      height: rem(64);
+    }
+  }
+}

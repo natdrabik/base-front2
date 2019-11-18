@@ -1,0 +1,41 @@
+.features {
+  &__grid {
+    // position: relative;
+    // display: flex;
+    font-size: 0;
+    white-space: nowrap;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
+    @include mq(md) {
+      display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      white-space: normal;
+      overflow: visible;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 330px));
+      grid-gap: rem(20);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__btn-prev,
+  &__btn-next {
+    position: absolute;
+    top: rem(71);
+    transform: translateY(-50%);
+    z-index: 2;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__btn-next {
+    right: 0;
+  }
+}

@@ -1,0 +1,31 @@
+files:
+  include: '**/*.scss'
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  property-sort-order:
+    - 1
+    - order: smacss
+  class-name-format:
+    - 1
+    - convention: hyphenatedbem
+  brace-style:
+    - 1
+    - style: 1tbs
+    - allow-single-line: true
+  empty-line-between-blocks:
+    - 1
+    - allow-single-line-rulesets: true
+  indentation:
+    - 1
+    - size: 2
+  no-duplicate-properties:
+    - 1
+    -
+      exclude:
+        - display
+  no-vendor-prefixes:
+    - 1
+  space-before-brace:
+    - 1

@@ -1,0 +1,9 @@
+extends layouts/default
+
+block content
+  - var breadcrumbs = [{name: 'Home',url: '/'},{name: 'FAQ', url: '/faq'}];
+
+  include components/breadcrumbs
+  include pages/faq/banner
+  include pages/faq/questions
+  //- include pages/home/clients

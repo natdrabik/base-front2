@@ -1,0 +1,161 @@
+.post-article {
+  background: #fff;
+
+  &__figure {
+    margin: 0;
+
+    img {
+      max-width: 100%;
+      min-height: rem(193);
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  &__wrapper {
+    max-width: rem(860);
+    margin: 0 auto;
+    padding: 0 rem(15);
+  }
+
+  &__header {
+    margin-top: rem(30);
+    margin-bottom: rem(20);
+    padding-bottom: rem(20);
+    border-bottom: 1px solid #e0e0e0;
+
+    @include mq(md) {
+      margin-top: rem(60);
+      margin-bottom: rem(30);
+      padding-bottom: rem(30);
+    }
+  }
+
+  &__title {
+    color: var(--darker-gray);
+    font-size: fluidTypography(17, 36);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: em(36);
+    }
+  }
+
+  &__icon {
+    color: var(--purple);
+    vertical-align: middle;
+
+    svg {
+      display: inline-block;
+      width: .9em;
+      height: .9em;
+    }
+  }
+
+  &__pubdate {
+    color: var(--darker-gray);
+    font-style: italic;
+  }
+
+  &__readingtime {
+    color: var(--purple);
+  }
+
+  &__metadata {
+    // color: var(--purple);
+    font-size: fluidTypography(14, 17);
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: em(17);
+    }
+  }
+
+  &__content {
+    @include clearfix;
+    padding-bottom: rem(40);
+    border-bottom: 1px solid #e0e0e0;
+    font-size: em(15);
+    line-height: 1.667;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: block;
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: fluidTypography(16, 25);
+
+      @include mq(lg) {
+        font-size: em(25, 15);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 44px), calc(100% - 44px) 100%, 0 100%);
+    }
+  }
+
+  .is--left {
+    @include mq(md) {
+      margin-right: rem(30);
+      float: left;
+    }
+  }
+
+  .is--right {
+    @include mq(md) {
+      margin-left: rem(30);
+      float: right;
+    }
+  }
+
+  &__footer {
+    padding-top: rem(20);
+    padding-bottom: rem(30);
+
+    @include mq(md) {
+      padding-bottom: rem(60);
+    }
+  }
+
+  &__share-title {
+    display: block;
+    margin-bottom: rem(20);
+    color: var(--darker-gray);
+    font-size: fluidTypography(15, 17);
+    font-weight: normal;
+    line-height: 1.2;
+
+    @include mq(lg) {
+      font-size: em(17);
+    }
+  }
+
+  &__share {
+    + #{&} {
+      margin-left: rem(12);
+    }
+
+    svg {
+      width: rem(27);
+      height: rem(27);
+
+      @include mq(md) {
+        width: rem(40);
+        height: rem(40);
+      }
+    }
+  }
+}
+

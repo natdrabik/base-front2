@@ -1,0 +1,27 @@
+section.home-clients
+  .wrapper__small
+    .home-clients__header
+      h1.home-clients__title Alguns de nossos clientes:
+    .home-clients__carousel
+      .swiper-container(data-carousel="clients")
+        .swiper-wrapper
+          .swiper-slide
+            .home-clients__card
+              picture.home-clients__picture
+                img(src="/images/client-01.png")
+          .swiper-slide
+            .home-clients__card
+              picture.home-clients__picture
+                img(src="/images/client-02.png")
+          .swiper-slide
+            .home-clients__card
+              picture.home-clients__picture
+                img(src="/images/client-03.png")
+          .swiper-slide
+            .home-clients__card
+              picture.home-clients__picture
+                img(src="/images/client-04.png")
+        .swiper-button-prev.home-clients__arrow
+          include ../../../images/arrow-left.svg
+        .swiper-button-next.home-clients__arrow
+          include ../../../images/arrow-right.svg

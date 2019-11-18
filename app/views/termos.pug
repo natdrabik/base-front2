@@ -1,0 +1,9 @@
+extends layouts/default
+
+block content
+  - var breadcrumbs = [{name: 'Home',url: '/'},{name: 'Termos de uso', url: '/termos'}];
+
+  include components/breadcrumbs
+  include pages/termos/banner
+  include pages/termos/terms
+  //- include pages/home/clients

@@ -1,0 +1,10 @@
+extends layouts/default
+
+block content
+  - var breadcrumbs = [{name: 'Home',url: '/'},{name: 'Produtos',url: '/produtos'}, {name: 'Andamentos Processuais', url: '/andamentos'}];
+  - var banner = {image:{desktop: '/images/banner-andamentos.jpg', mobile: '/images/banner-andamentos-mobile.jpg'}, title: 'Informações personalizadas a partir do número de processo', text: ['Já pensou consultar diversas informações a partir, apenas, de um número de processo?', 'O Bonnjur já, e agora você pode contar com o serviço de Andamento Processual, que proporciona o acompanhamento de todas as movimentações jurídicas via número de processo. Fácil, não?'], url: '#', button: 'Experimente Agora'}
+
+  include components/breadcrumbs
+  include components/banners
+  include components/leadform
+  include pages/home/clients

@@ -1,0 +1,50 @@
+.post-related
+  .wrapper__small
+    header.post-related__header
+      h2.post-related__title Matérias relacionadas
+    .post-related__container
+      .swiper-container(data-carousel="related")
+        .swiper-wrapper
+          .swiper-slide
+            .post(data-observe)
+              article.post__card
+                figure.post__figure
+                  img.post__image(width="335", height="215", src="https://source.unsplash.com/random/400x300", alt="Texto descritivo da imagem")
+                h2.post__title: a.post__link(href="/post") A importância e os impactos da relação entre Direito e tecnologia
+                footer.post__metadata
+                  time.post__pubdate(datetime="2019-04-04") Abril 4, 2019
+                  |  |
+                  span.post__icon
+                    include ../../../images/clock.svg
+                  | #[time.post__readingtime(datetime="PT5M") 5 min.] de leitura
+          .swiper-slide
+            .post(data-observe)
+              article.post__card
+                figure.post__figure
+                  img.post__image(width="335", height="215", src="https://source.unsplash.com/random/400x300", alt="Texto descritivo da imagem")
+
+                h2.post__title: a.post__link(href="/post") A importância e os impactos da relação entre Direito e tecnologia
+                footer.post__metadata
+                  time.post__pubdate(datetime="2019-04-04") Abril 4, 2019
+                  |  |
+                  span.post__icon
+                    include ../../../images/clock.svg
+                  | #[time.post__readingtime(datetime="PT5M") 5 min.] de leitura
+          .swiper-slide
+            .post(data-observe)
+              article.post__card
+                figure.post__figure
+                  img.post__image(width="335", height="215", src="https://source.unsplash.com/random/400x300", alt="Texto descritivo da imagem")
+
+                h2.post__title: a.post__link(href="/post") A importância e os impactos da relação entre Direito e tecnologia
+                footer.post__metadata
+                  time.post__pubdate(datetime="2019-04-04") Abril 4, 2019
+                  |  |
+                  span.post__icon
+                    include ../../../images/clock.svg
+                  | #[time.post__readingtime(datetime="PT5M") 5 min.] de leitura
+        .swiper-button-prev.post-related__arrow
+          include ../../../images/arrow-left.svg
+        .swiper-button-next.post-related__arrow
+          include ../../../images/arrow-right.svg
+

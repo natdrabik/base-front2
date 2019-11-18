@@ -1,0 +1,29 @@
+.aux {
+  display: none;
+  position: relative;
+  background: #fff;
+  color: #000;
+  z-index: 3;
+
+  @include mq(md) {
+    display: block;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__toggles {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__toggle {
+    padding: rem(8);
+  }
+}

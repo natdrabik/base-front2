@@ -1,0 +1,22 @@
+.produtos-products {
+  &__header {
+    padding-top: rem(80);
+  }
+
+  &__title {
+    margin: 0 auto;
+    color: var(--darker-gray);
+    font-size: fluidTypography(22, 31);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: em(31);
+    }
+  }
+
+  &__container {
+    padding-bottom: rem(50);
+  }
+}

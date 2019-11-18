@@ -1,0 +1,147 @@
+$font-size-base: 10px !default;
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// Typography
+
+@function em($pixel, $base: $font-size-base) {
+  @return (strip-unit($pixel) / strip-unit($base)) * 1em;
+}
+
+@function rem($pixel, $base: 10) {
+  @return (strip-unit($pixel) / strip-unit($base)) * 1rem;
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+@function fluidTypography($startSize, $endSize, $smallViewport: 320, $largeViewport: 1200) {
+  $zz: rem($startSize);
+  $xx: rem(strip-unit($smallViewport) / 100);
+  $yy: 100 * (strip-unit($endSize) - strip-unit($startSize)) / (strip-unit($largeViewport) - strip-unit($smallViewport));
+  @return calc(#{$zz} + ((1vw - #{$xx}) * #{$yy}));
+}
+
+// Utils
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    display: table; // 2
+    content: " "; // 1
+  }
+  
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin reset_list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+$image-path: '../images' !default;
+
+@function image-url($image) {
+  @return url($image-path + '/' + $image);
+}
+
+// Media Queries
+
+$screen-xs-min: 480px;
+$screen-xs-max: ($screen-xs-min - 1);
+$screen-sm-min: 768px;
+$screen-sm-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-md-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+
+@mixin mq($media) {
+  @if $media == xs {
+    @media (max-width: $screen-sm-max) {@content;}
+  }
+  @else if $media == sm {
+    @media (min-width: $screen-sm-min) {@content;}
+  }
+  @else if $media == only-sm {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {@content;}
+  }
+  @else if $media == md {
+    @media (min-width: $screen-md-min) {@content;}
+  }
+  @else if $media == only-md {
+    @media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {@content;}
+  }
+  @else if $media == lg {
+    @media (min-width: $screen-lg-min) {@content;}
+  }
+  @else {
+    @media (min-width: $media) { @content; }
+  }
+}
+
+@mixin fluidType($startSize, $endSize, $smallViewport: 320, $largeViewport: 1200) {
+  font-size: fluidTypography($startSize, $endSize, $smallViewport: 320, $largeViewport: 1200);
+
+  @include mq(($largeViewport * 1px)) {
+    font-size: $endSize;
+  }
+}
+
+  // Width & Height
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($side) {
+  width: $side;
+  height: $side;
+}
+
+@mixin appearance($value) {
+  -moz-appearance: $value;
+  -webkit-appearance: $value;
+  appearance: $value;
+}
+
+@mixin fontsmoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,116 @@
+.home-banners {
+  .swiper-container {
+    &:not(.swiper-container-initialized) {
+      .swiper-wrapper {
+        white-space: nowrap;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+      }
+
+      .swiper-slide {
+        display: inline-block;
+        overflow: hidden;
+        scroll-snap-align: start;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    position: static;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: rem(10) 0;
+
+    &-bullet {
+      display: flex;
+      width: rem(15);
+      height: rem(15);
+      border: 1px solid transparent;
+      background-color: transparent;
+      opacity: 1;
+
+      &:before {
+        display: block;
+        width: rem(9);
+        height: rem(9);
+        margin: auto;
+        border-radius: 50%;
+        background-color: var(--light-gray);
+        content: "";
+
+        .has--high-contrast & {
+          background-color: #000;
+        }
+      }
+
+      &:focus {
+        outline-offset: 10px;
+      }
+
+      &-active {
+        border-color: var(--orange);
+
+        &:before {
+          background-color: var(--orange);
+        }
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
+    width: 100%;
+    height: 90.625vmin;
+    max-height: rem(375);
+
+
+    @include mq(md) {
+      height: 52.6666666667vw;
+      max-height: rem(632);
+    }
+  }
+
+  &__content {
+    &:before {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      content: '';
+    }
+
+    > * {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+    }
+  }
+
+  &__figure,
+  &__picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__selo {
+    position: relative;
+    width: rem(60);
+    margin-top: rem(-100);
+    z-index: 1;
+    @include mq(md) {
+      width: auto;
+    }
+  }
+}
