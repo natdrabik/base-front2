@@ -6,28 +6,22 @@
           li.aux__item
             button.reset__btn.aux__toggle(type="button", data-contrast, title="Alto contraste")
               span.sr-only Alto contraste
-              include ../../images/highcontrast.svg
           li.aux__item
             button.reset__btn.aux__toggle(type="button", data-fontsize-increase, title="Aumentar fonte")
               span.sr-only Aumentar fonte
-              include ../../images/fontsize-increase.svg
           li.aux__item
             button.reset__btn.aux__toggle(type="button", data-fontsize-decrease, title="Diminuir fonte")
               span.sr-only Diminuir fonte
-              include ../../images/fontsize-decrease.svg
   .masthead#masthead
     .masthead__wrapper
       .wrapper__small
         .masthead__container
           .masthead__brand#brand
             a.masthead__logo(href="/")
-              include ../../images/logo.svg
           button.reset__btn.masthead__toggle(type="button", data-toggle="nav")
             span.sr-only Menu
             i.masthead__icon-close
-              include ../../images/cross-remove-sign.svg
             i.masthead__icon
-              include ../../images/menu-options.svg
           .masthead__panel
             nav.masthead__nav
               ul.nav
@@ -44,9 +38,7 @@
                 button.reset__btn.search__toggle(type="button", title="Busca", data-toggle="search")
                   span.sr-only Busca
                   i.search__icon-close
-                    include ../../images/close.svg
                   i.search__icon
-                    include ../../images/search.svg
                 .search__container
                   form.search__form
                     label.search__label.sr-only(for="search") Buscar
@@ -54,11 +46,6 @@
                     button.reset__btn.search__submit(type="submit")
                       span.sr-only Buscar
                       i.search__icon
-                        include ../../images/search.svg
-            .masthead__clientarea
-              a.masthead__button(href="/login")
-                i.masthead__button-icon: include ../../images/locked-padlock.svg
-                |  Área do Cliente
               //- button.masthead__button(type="button", data-toggle="dropdown")
               //-   i.masthead__button-icon: include ../../images/locked-padlock.svg
               //-   |  Área do Cliente
