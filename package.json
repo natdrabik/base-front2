@@ -1,6 +1,6 @@
 {
   "name": "base-front",
-  "version": "2.0",
+  "version": "2.0.0",
   "private": true,
   "engines": {
     "node": ">=4"
@@ -23,7 +23,7 @@
     "fancy-log": "^1.3.3",
     "git-rev": "^0.2.1",
     "globby": "^8.0.2",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-bump": "^3.1.3",
     "gulp-cache": "^1.1.1",
     "gulp-debug": "^4.0.0",
