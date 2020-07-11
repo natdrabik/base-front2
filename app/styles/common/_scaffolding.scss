@@ -106,3 +106,13 @@ body {
     opacity: 0;
   }
 }
+
+@include mq(sm) {
+body { color: inherit}
+}
+@include mq(md) {
+body { color: inherit}
+}
+@include mq(lg) {
+body { color: inherit}
+}
